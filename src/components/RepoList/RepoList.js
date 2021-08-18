@@ -10,6 +10,9 @@ const RepoList = (props) => (
         title={repo.name}
         desc={repo.description}
         owner={repo.owner.login}
+        date={repo.pushed_at}
+        stars={repo.stargazers_count}
+        issues={repo.open_issues_count}
       />
     ))}
   </div>

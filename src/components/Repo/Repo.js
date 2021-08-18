@@ -7,6 +7,9 @@ const Repo = (props) => {
       <p>{props.desc}</p>
       <img src={props.imageUrl} />
       <p>{props.owner}</p>
+      <p>{props.date}</p>
+      <p>{props.stars}</p>
+      <p>{props.issues}</p>
     </div>
   );
 };
