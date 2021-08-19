@@ -6,4 +6,27 @@
   height: 60vh;
   padding-top: 30vh;
   text-align: center;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.PaginationBtn {
+  margin: 1rem;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  background-color: white;
+  cursor: pointer;
+  border-color: gray;
+  border-style: solid;
+}
+
+.PaginationBtn:hover {
+  background-color: black;
+  color: white;
+}
+
+.PaginationBtn:disabled {
+  background-color: white;
+  color: gray;
 }

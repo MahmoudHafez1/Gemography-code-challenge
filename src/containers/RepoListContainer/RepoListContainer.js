@@ -37,9 +37,10 @@ const RepoListContainer = () => {
         setRepos(results.items);
         setCurrentPage(pageNumber);
         setLoading(false);
+        window.scrollTo(0, 0);
       })
       .catch((err) => {
-        setError("Unable to load more Repositories");
+        setError("Unable to load Repositories");
         setLoading(false);
       });
   }, []);
@@ -74,15 +75,20 @@ const RepoListContainer = () => {
         <div className={classes.Error}>{error}</div>
       )}
 
-      <div className={classes.Pagination}>
+      <div>
         <button
           onClick={onPrevClickHandler}
           disabled={loading || currentPage === 1}
+          className={classes.PaginationBtn}
         >
-          prev
+          Previous
         </button>
-        <button onClick={onNextClickHandler} disabled={loading}>
-          next
+        <button
+          onClick={onNextClickHandler}
+          disabled={loading}
+          className={classes.PaginationBtn}
+        >
+          Next
         </button>
       </div>
     </Fragment>
