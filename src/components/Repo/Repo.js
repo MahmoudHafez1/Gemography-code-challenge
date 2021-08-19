@@ -3,6 +3,7 @@ import DetailBar from "../DetailBar/DetailBar";
 import classes from "./Repo.module.css";
 
 const Repo = (props) => {
+  console.log("aa");
   return (
     <div className={classes.RepoContainer}>
       <img

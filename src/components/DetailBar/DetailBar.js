@@ -8,12 +8,10 @@ const DetailBar = (props) => {
   };
 
   const stars =
-    props.stars > 1000
-      ? `${Math.floor(props.stars / 100) / 10} K`
-      : props.stars;
+    props.stars > 1000 ? `${Math.floor(props.stars / 100) / 10}K` : props.stars;
   const issues =
     props.issues > 1000
-      ? `${Math.floor(props.issues / 100) / 10} K`
+      ? `${Math.floor(props.issues / 100) / 10}K`
       : props.issues;
   const timeInterval = diff_in_days(
     new Date(),
