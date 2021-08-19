@@ -1,0 +1,9 @@
+.Loader {
+  height: 90vh;
+}
+
+.Error {
+  height: 60vh;
+  padding-top: 30vh;
+  text-align: center;
+}

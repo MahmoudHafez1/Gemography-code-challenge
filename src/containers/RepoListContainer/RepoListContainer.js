@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback, Fragment } from "react";
 import RepoList from "../../components/RepoList/RepoList";
 import classes from "./RepoListContainer.module.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
 const formatDate = (d) => {
   let month = "" + d.getMonth();
@@ -19,13 +21,11 @@ const RepoListContainer = () => {
   const [loading, setLoading] = useState(false);
   const [repos, setRepos] = useState([]);
   const [currentPage, setCurrentPage] = useState();
-  const [count, setCount] = useState();
   const [error, setError] = useState();
 
   const fetchPage = useCallback((pageNumber = 1) => {
     setLoading(true);
     setError(false);
-
     fetch(
       `https://api.github.com/search/repositories?q=created:>${currentDate}&sort=stars&order=desc&page=${pageNumber}`
     )
@@ -36,7 +36,6 @@ const RepoListContainer = () => {
       .then((results) => {
         setRepos(results.items);
         setCurrentPage(pageNumber);
-        setCount(results.total_count);
         setLoading(false);
       })
       .catch((err) => {
@@ -60,11 +59,19 @@ const RepoListContainer = () => {
   return (
     <Fragment>
       {loading ? (
-        <div>...Loading</div>
+        <div className={classes.Loader}>
+          <Loader
+            type="ThreeDots"
+            color="#000"
+            height={100}
+            width={100}
+            timeout={3000}
+          />
+        </div>
       ) : !error ? (
         <RepoList repos={repos} />
       ) : (
-        <div>{error}</div>
+        <div className={classes.Error}>{error}</div>
       )}
 
       <div className={classes.Pagination}>
