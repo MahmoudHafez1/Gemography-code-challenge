@@ -6,13 +6,14 @@ const RepoList = (props) => (
     {props.repos.map((repo) => (
       <Repo
         key={repo.id}
-        imageUrl={repo.owner.avatar_url}
+        avatarUrl={repo.owner.avatar_url}
         title={repo.name}
         desc={repo.description}
         owner={repo.owner.login}
         date={repo.pushed_at}
         stars={repo.stargazers_count}
         issues={repo.open_issues_count}
+        ownerUrl={repo.owner.html_url}
       />
     ))}
   </div>

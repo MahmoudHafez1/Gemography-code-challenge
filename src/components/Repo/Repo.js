@@ -1,15 +1,27 @@
 import React from "react";
+import DetailBar from "../DetailBar/DetailBar";
+import classes from "./Repo.module.css";
 
 const Repo = (props) => {
   return (
-    <div>
-      <h1>{props.title}</h1>
-      <p>{props.desc}</p>
-      <img src={props.imageUrl} />
-      <p>{props.owner}</p>
-      <p>{props.date}</p>
-      <p>{props.stars}</p>
-      <p>{props.issues}</p>
+    <div className={classes.RepoContainer}>
+      <img
+        src={props.avatarUrl}
+        alt={`${props.owner} avatar`}
+        className={classes.Avatar}
+      />
+
+      <div className={classes.Info}>
+        <h2 className={classes.title}>{props.title}</h2>
+        <p>{props.desc}</p>
+        <DetailBar
+          stars={props.stars}
+          issues={props.issues}
+          date={props.date}
+          owner={props.owner}
+          ownerUrl={props.ownerUrl}
+        />
+      </div>
     </div>
   );
 };

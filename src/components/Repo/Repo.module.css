@@ -1,0 +1,32 @@
+.RepoContainer {
+  display: flex;
+  padding: 1rem;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.Avatar {
+  width: 200px;
+  height: 200px;
+}
+
+.Info {
+  margin-left: 1rem;
+  text-align: left;
+  width: 100%;
+  overflow: hidden;
+}
+
+.Title {
+  word-wrap: break-word;
+}
+
+@media screen and (max-width: 600px) {
+  .RepoContainer {
+    display: block;
+  }
+  .Info {
+    text-align: center;
+    margin-left: 0;
+  }
+}

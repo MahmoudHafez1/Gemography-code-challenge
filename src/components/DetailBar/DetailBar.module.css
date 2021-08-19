@@ -1,0 +1,37 @@
+.DetailBar {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.Stars {
+  display: inline-block;
+  padding: 4px;
+  border-style: solid;
+  border-width: 2px;
+  white-space: nowrap;
+}
+
+.Issues {
+  display: inline-block;
+  margin-left: 2rem;
+  padding: 4px;
+  border-style: solid;
+  border-width: 2px;
+  white-space: nowrap;
+}
+
+.timeIntervalAndOwner {
+  text-align: center;
+  margin-left: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .DetailBar {
+    display: block;
+    text-align: center;
+  }
+  .timeIntervalAndOwner {
+    margin-left: 0;
+  }
+}

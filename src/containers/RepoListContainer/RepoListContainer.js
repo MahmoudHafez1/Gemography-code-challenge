@@ -33,7 +33,7 @@ const RepoListContainer = () => {
         setRequest(false);
       });
   }, []);
-  console.log(repos);
+  //console.log(repos);
   return <RepoList repos={repos} />;
 };
 
